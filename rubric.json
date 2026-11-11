@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "scoring": "Rate each dimension from 0 (broken/unusable) to 5 (exceptional), with concrete evidence; leave untested dimensions unrated.",
+  "anchors": {"0": "Broken or obstructs the primary task", "1": "Severe and recurrent friction", "2": "Noticeable problem affecting important use cases", "3": "Usable with clear improvement opportunities", "4": "Strong execution with minor issues", "5": "Exceptionally clear, inclusive, and intentional"},
+  "dimensions": [
+    {"id": "task_clarity", "name": "Task clarity and information architecture", "weight": 20, "lookFor": ["Primary user goal", "Findability", "Navigation comprehension", "Clear next action"]},
+    {"id": "visual_hierarchy", "name": "Visual hierarchy and composition", "weight": 15, "lookFor": ["One primary focal point", "Information grouping", "Whitespace and alignment"]},
+    {"id": "interaction", "name": "Interaction usability and feedback", "weight": 15, "lookFor": ["Visible affordances", "System feedback", "Empty/loading/error states", "Predictable flows"]},
+    {"id": "accessibility", "name": "Accessibility and inclusion", "weight": 15, "lookFor": ["Contrast", "Keyboard and focus", "Semantic structure", "Text alternatives", "Motion preferences"]},
+    {"id": "typography", "name": "Typography and readability", "weight": 10, "lookFor": ["Line length", "Body legibility", "Type scale", "Intentional pairings"]},
+    {"id": "responsiveness", "name": "Responsive and mobile layout", "weight": 10, "lookFor": ["No overflow", "Mobile navigation", "Tap affordances", "Viewport adaptation"]},
+    {"id": "motion", "name": "Motion and transitions", "weight": 5, "lookFor": ["Communicates state or hierarchy", "Consistent choreography", "Reduced-motion fallback"]},
+    {"id": "brand", "name": "Brand differentiation", "weight": 5, "lookFor": ["Distinctive visual strategy", "Consistency", "Fit with audience and product"]},
+    {"id": "content_trust", "name": "Content integrity and trust", "weight": 5, "lookFor": ["Truthful claims", "Source clarity", "Real assets", "Credible contact/ownership"]}
+  ],
+  "severities": {
+    "P0": "Blocking: primary path broken, serious safety/inclusion issue, or deceptive content; do not ship unresolved.",
+    "P1": "High impact: important user flow or comprehension substantially degraded.",
+    "P2": "Moderate: noticeable friction or inconsistent craft with meaningful impact.",
+    "P3": "Polish: optional refinement with limited practical impact."
+  }
+}

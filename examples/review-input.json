@@ -1,0 +1,12 @@
+{
+  "context": {"surface": "mobile landing page", "audience": "first-time visitors", "goal": "understand product and start signup"},
+  "ratings": [
+    {"dimension": "task_clarity", "score": 3, "evidence": "Primary button visible, but headline does not name the product outcome."},
+    {"dimension": "visual_hierarchy", "score": 2, "evidence": "Hero has four similarly weighted CTAs and no clear reading order."},
+    {"dimension": "typography", "score": 4, "evidence": "Body labels are legible in reviewed 390px screenshot."}
+  ],
+  "issues": [
+    {"severity": "P1", "dimension": "task_clarity", "location": "390px hero", "observation": "Headline names the product category but not the visitor benefit.", "impact": "First-time visitors must infer the value proposition.", "fix": "Rewrite the headline to lead with the user's outcome.", "verification": "Review the first screen with the proposed copy."},
+    {"severity": "P2", "dimension": "visual_hierarchy", "location": "390px hero action row", "observation": "Four equally emphasized buttons are stacked above the fold.", "impact": "The next best action is ambiguous.", "fix": "Promote one primary action and demote alternatives to text links.", "verification": "Verify hierarchy on mobile and desktop."}
+  ]
+}
