@@ -87,3 +87,7 @@ Purpose first. Use transform/opacity where appropriate, avoid making all section
 - `Compare these two mobile directions.`
 - `Run a motion review and suggest meaningful animations.`
 - `Improve the top three issues, then re-review.`
+
+## External design inspiration (opt-in)
+
+If the user asks for inspiration, style exploration, alternative directions or distinctive interaction patterns, consult [`inspiration/mia-ai-lab-fable-5.2.md`](../../inspiration/mia-ai-lab-fable-5.2.md) and the machine-readable [`catalog`](../../inspiration/mia-ai-lab-fable-5.2.json). Choose at most 2–3 references that match the product purpose and interaction model, and explain **what abstract principle** is relevant. Open originals when possible and credit Mia. Do not copy HTML, copyrighted art, distinctive branded copy or the entire page; independently design for the project's audience and existing identity. Inspiration is **not evidence** for scoring a real UI, nor proof of accessibility or performance. Preserve reduced-motion and mobile fallbacks.

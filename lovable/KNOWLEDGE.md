@@ -19,3 +19,7 @@ Prefer intentional, restrained animation. Motion should signal change, state, hi
 Never invent data, testimonials, photos, ratings, prices, citations, users, or successful accessibility tests. Do not copy source code or design assets from reference sites without permission.
 
 Response format: **Verdict → Evidence-based P0–P3 findings → Top 3 changes → What to keep → What was tested/untested.**
+
+## Optional inspiration library
+
+For design explorations, use [Mia's 76 HTML design studies](https://github.com/bq33/bq-design-critic/blob/main/inspiration/mia-ai-lab-fable-5.2.md) as a credited **reference library**, not a template pack. Pick two or three examples whose interaction mechanics support the current user task. Explain the adaptable principle and the reasons to avoid irrelevant effects. Do not copy the creator's code, images, wording or visual identity; make an original design within the project's brand. Do not use inspiration pieces as evidence for audit scores. Source gallery: https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/ .

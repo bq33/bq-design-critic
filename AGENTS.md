@@ -9,3 +9,5 @@ Read `skills/design-critic/SKILL.md` before performing any design critique or re
 - Treat existing designs as baseline; prefer targeted, reversible improvements to wholesale restyling.
 - Motion must serve interaction or storytelling, remain performant, and support reduced-motion preferences.
 - Never reference private employer systems or copy third-party design content.
+
+For inspiration-led explorations, read `inspiration/README.md` and the linked 76-study source index. Credit creators and translate mechanisms into original product designs; do not copy their source, screenshots or branded assets. Keep critique findings independent from taste references.

@@ -1,0 +1,753 @@
+{
+  "version": 1,
+  "curator": "BQ Design Critic",
+  "collection": "Mia AI Lab - Claude Fable 5.2 HTML Studies",
+  "sourcePost": "https://x.com/MiaAI_lab/status/2119930229661503893",
+  "creator": "Mia (@MiaAI_lab)",
+  "sourceRepository": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files",
+  "galleryUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/",
+  "modelNamedBySource": "Claude Fable 5.2",
+  "dateCurated": "2026-11-11",
+  "sourceCount": 76,
+  "summary": "A linked reference catalog of 76 original studies, with original prompts and live demos. Curator notes for selected studies are independent interpretation, not creator claims or usability testing.",
+  "provenance": "Titles and original links come from creator's live gallery; all featured patterns, tags, use cases and cautions are the curator's interpretation of the creator's descriptions. The catalog does not copy demo code, prompts, or image assets.",
+  "missingSourceNumbers": [
+    "076",
+    "077",
+    "078"
+  ],
+  "entries": [
+    {
+      "id": "001",
+      "title": "Suminagashi — The Marbling Tray",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/001-suminagashi-marbling-tray.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/001-suminagashi-marbling-tray.txt",
+      "featured": false
+    },
+    {
+      "id": "002",
+      "title": "Aerodrome Lisbeth — Airship Departures",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/002-airship-terminal-split-flap.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/002-airship-terminal-split-flap.txt",
+      "featured": false
+    },
+    {
+      "id": "003",
+      "title": "The Anatomy of a Croissant",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/003-anatomy-of-a-croissant.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/003-anatomy-of-a-croissant.txt",
+      "featured": true,
+      "pattern": "Editorial storytelling with a sticky explanatory diagram",
+      "tags": [
+        "editorial",
+        "scrollytelling",
+        "education",
+        "diagram"
+      ],
+      "why": "Turn a complicated concept into sequenced chapters paired with a persistent explanation, not a wall of cards.",
+      "apply": "Educational explainers, product technical detail, how-it-works pages",
+      "caution": "Provide controls and a linear reading order; do not make understanding dependent on scroll animation."
+    },
+    {
+      "id": "004",
+      "title": "Night Watch at Sorrow Rock",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/004-lighthouse-keeper-night-watch.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/004-lighthouse-keeper-night-watch.txt",
+      "featured": false
+    },
+    {
+      "id": "005",
+      "title": "The Slide Rule",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/005-working-slide-rule.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/005-working-slide-rule.txt",
+      "featured": false
+    },
+    {
+      "id": "006",
+      "title": "Volcán Chico Hot Sauce",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/006-volcan-chico-hot-sauce.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/006-volcan-chico-hot-sauce.txt",
+      "featured": true,
+      "pattern": "Expressive brand-led product landing page",
+      "tags": [
+        "commerce",
+        "branding",
+        "bold",
+        "kinetic-type"
+      ],
+      "why": "Make typography, packaging, palette, and gestures serve one brand story rather than using generic landing-page components.",
+      "apply": "Distinctive product launches and expressive retail campaigns",
+      "caution": "Do not adopt the visual noise for a trust-critical task or long-form product flow."
+    },
+    {
+      "id": "007",
+      "title": "Core 7B — Eight Hundred Metres of Winter",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/007-ice-core-800-metres.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/007-ice-core-800-metres.txt",
+      "featured": false
+    },
+    {
+      "id": "008",
+      "title": "Cabinet of Impossible Minerals",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/008-cabinet-of-impossible-minerals.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/008-cabinet-of-impossible-minerals.txt",
+      "featured": false
+    },
+    {
+      "id": "009",
+      "title": "Koi Pond, Noon",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/009-koi-pond-noon.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/009-koi-pond-noon.txt",
+      "featured": true,
+      "pattern": "Ambient, full-bleed interactive scene",
+      "tags": [
+        "immersive",
+        "ambient",
+        "canvas",
+        "gesture"
+      ],
+      "why": "A single responsive visual environment can establish mood with subtle cause-and-effect interactions.",
+      "apply": "Playful experiences, creative portfolios, restorative or educational moments",
+      "caution": "Provide usable controls, non-animated fallback, and accessible alternatives to pointer-only interaction."
+    },
+    {
+      "id": "010",
+      "title": "Six Rooms of Optical Pressure",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/010-op-art-pulse.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/010-op-art-pulse.txt",
+      "featured": false
+    },
+    {
+      "id": "011",
+      "title": "The Hours in Words",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/011-the-hours-in-words.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/011-the-hours-in-words.txt",
+      "featured": false
+    },
+    {
+      "id": "012",
+      "title": "Murmuration at Dusk",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/012-murmuration-at-dusk.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/012-murmuration-at-dusk.txt",
+      "featured": false
+    },
+    {
+      "id": "013",
+      "title": "Iron Filings",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/013-iron-filings.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/013-iron-filings.txt",
+      "featured": false
+    },
+    {
+      "id": "014",
+      "title": "Where the Primes Fall",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/014-ulam-prime-spiral.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/014-ulam-prime-spiral.txt",
+      "featured": false
+    },
+    {
+      "id": "015",
+      "title": "Maison Ombre — Parfums d'Intérieur",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/015-maison-ombre-perfume.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/015-maison-ombre-perfume.txt",
+      "featured": true,
+      "pattern": "Material-driven luxury product art direction",
+      "tags": [
+        "commerce",
+        "luxury",
+        "editorial",
+        "product"
+      ],
+      "why": "Let the material, typography, and product illustration form a cohesive identity and use restrained motion as product detail.",
+      "apply": "Premium product storytelling and editorial commerce",
+      "caution": "A product illustration is not proof of a real product; use genuine catalog photography where required."
+    },
+    {
+      "id": "016",
+      "title": "Descent — A Vector Lander",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/016-vector-lunar-descent.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/016-vector-lunar-descent.txt",
+      "featured": false
+    },
+    {
+      "id": "017",
+      "title": "Spore Print — A Two-Colour Zine",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/017-spore-print-riso-zine.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/017-spore-print-riso-zine.txt",
+      "featured": false
+    },
+    {
+      "id": "018",
+      "title": "Plotter No. 2 — Landscapes in One Pen",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/018-pen-plotter-landscapes.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/018-pen-plotter-landscapes.txt",
+      "featured": true,
+      "pattern": "Make progress visible through a process animation",
+      "tags": [
+        "process",
+        "education",
+        "technical",
+        "motion"
+      ],
+      "why": "Showing a tool working step by step builds comprehension and confidence more effectively than decorative loading.",
+      "apply": "Learning exercises, simulations, construction workflows, progress feedback",
+      "caution": "Keep the task skippable and provide static explanatory states."
+    },
+    {
+      "id": "019",
+      "title": "Rhythmus — A Drum Machine in Primary Colours",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/019-bauhaus-drum-machine.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/019-bauhaus-drum-machine.txt",
+      "featured": false
+    },
+    {
+      "id": "020",
+      "title": "Aurora over Skjervøy Sound",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/020-aurora-over-the-fjord.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/020-aurora-over-the-fjord.txt",
+      "featured": false
+    },
+    {
+      "id": "021",
+      "title": "Drawer 31 — Moths That Were Never Caught",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/021-drawer-of-imaginary-moths.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/021-drawer-of-imaginary-moths.txt",
+      "featured": false
+    },
+    {
+      "id": "022",
+      "title": "The Hotel Meridian — Going Up",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/022-hotel-meridian-elevator.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/022-hotel-meridian-elevator.txt",
+      "featured": true,
+      "pattern": "Scroll-driven spatial narrative",
+      "tags": [
+        "scrollytelling",
+        "storytelling",
+        "motion",
+        "immersive"
+      ],
+      "why": "Use travel through a consistent spatial metaphor to structure an otherwise linear story.",
+      "apply": "Brand histories, museum-like journeys, editorial experiences",
+      "caution": "Never make critical product navigation or forms reliant on animation or scroll distance."
+    },
+    {
+      "id": "023",
+      "title": "Side A — A Turntable in CSS",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/023-walnut-turntable.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/023-walnut-turntable.txt",
+      "featured": false
+    },
+    {
+      "id": "024",
+      "title": "Everyone in Ostrava-under-Hill",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/024-village-of-three-hundred.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/024-village-of-three-hundred.txt",
+      "featured": false
+    },
+    {
+      "id": "025",
+      "title": "The Wheel — Throw a Pot",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/025-pottery-wheel.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/025-pottery-wheel.txt",
+      "featured": true,
+      "pattern": "Tactile direct manipulation",
+      "tags": [
+        "interaction",
+        "gesture",
+        "tactile",
+        "education"
+      ],
+      "why": "An object responds visibly to user manipulation, making cause-and-effect intuitive and memorable.",
+      "apply": "Creative tools, trade-learning exercises, playful product demos",
+      "caution": "Provide keyboard and touch affordances; preserve function under reduced motion."
+    },
+    {
+      "id": "026",
+      "title": "Frost on the Window",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/026-frost-on-the-window.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/026-frost-on-the-window.txt",
+      "featured": false
+    },
+    {
+      "id": "027",
+      "title": "Five Calligrams",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/027-calligrams.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/027-calligrams.txt",
+      "featured": false
+    },
+    {
+      "id": "028",
+      "title": "Conservas Maré Alta — Tinned Fish Since 1923",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/028-conservas-mare-alta.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/028-conservas-mare-alta.txt",
+      "featured": true,
+      "pattern": "Packaging-first visual identity",
+      "tags": [
+        "commerce",
+        "branding",
+        "illustration",
+        "editorial"
+      ],
+      "why": "Carry illustration, typography, and product packaging into a continuous interface language, not disconnected sections.",
+      "apply": "Merchandise and consumer-brand storefronts",
+      "caution": "Adapt the design logic, not the graphics, brand name, or original product art."
+    },
+    {
+      "id": "029",
+      "title": "Holm Skerry Weather Station",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/029-skerry-weather-station.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/029-skerry-weather-station.txt",
+      "featured": false
+    },
+    {
+      "id": "030",
+      "title": "Rose Window",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/030-rose-window.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/030-rose-window.txt",
+      "featured": false
+    },
+    {
+      "id": "031",
+      "title": "Tangram Menagerie",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/031-tangram-menagerie.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/031-tangram-menagerie.txt",
+      "featured": true,
+      "pattern": "Puzzle-based interaction and rewarding success state",
+      "tags": [
+        "interaction",
+        "game",
+        "feedback",
+        "education"
+      ],
+      "why": "Clear feedback and a rewarding completion state make progression legible and satisfying.",
+      "apply": "Learning exercises, practice activities, onboarding interactions",
+      "caution": "Do not hide state changes behind motion; include accessible controls and clear undo/reset."
+    },
+    {
+      "id": "032",
+      "title": "The Night Typist",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/032-the-night-typist.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/032-the-night-typist.txt",
+      "featured": true,
+      "pattern": "Hardware metaphor supporting authentic text feedback",
+      "tags": [
+        "typography",
+        "tactile",
+        "interaction",
+        "editorial"
+      ],
+      "why": "Physical cues can make a text interaction feel intentional when the metaphor directly explains the input and output.",
+      "apply": "Writing products, brand storytelling, nostalgia-led microsites",
+      "caution": "Do not prioritize physical simulation over typing speed, input accessibility, or text editing."
+    },
+    {
+      "id": "033",
+      "title": "Lava Lamp, 1971",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/033-lava-lamp-1971.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/033-lava-lamp-1971.txt",
+      "featured": false
+    },
+    {
+      "id": "034",
+      "title": "The Museum of Obsolete Sounds",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/034-museum-of-obsolete-sounds.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/034-museum-of-obsolete-sounds.txt",
+      "featured": false
+    },
+    {
+      "id": "035",
+      "title": "Totality",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/035-totality.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/035-totality.txt",
+      "featured": false
+    },
+    {
+      "id": "036",
+      "title": "Kestrel Frameworks — Bicycles Drawn to Measure",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/036-kestrel-frameworks-bicycles.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/036-kestrel-frameworks-bicycles.txt",
+      "featured": false
+    },
+    {
+      "id": "037",
+      "title": "Pendulum Wave",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/037-pendulum-wave.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/037-pendulum-wave.txt",
+      "featured": false
+    },
+    {
+      "id": "038",
+      "title": "Instant Film",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/038-instant-film.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/038-instant-film.txt",
+      "featured": false
+    },
+    {
+      "id": "039",
+      "title": "ARES-HORT Console — Greenhouse B",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/039-mars-greenhouse-console.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/039-mars-greenhouse-console.txt",
+      "featured": true,
+      "pattern": "Single-theme information-dense dashboard",
+      "tags": [
+        "dashboard",
+        "data-viz",
+        "console",
+        "retro"
+      ],
+      "why": "A unified display language can organize multiple telemetry views without relying on generic card grids.",
+      "apply": "Specialized consoles and niche analytical tools",
+      "caution": "Readable data, descriptive labels, and keyboard support outrank visual realism."
+    },
+    {
+      "id": "040",
+      "title": "The Harbour Courier — Tuesday, 9 March 1926",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/040-the-harbour-courier-1926.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/040-the-harbour-courier-1926.txt",
+      "featured": false
+    },
+    {
+      "id": "041",
+      "title": "Jelly Alphabet",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/041-jelly-alphabet.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/041-jelly-alphabet.txt",
+      "featured": true,
+      "pattern": "Expressive spring and material motion",
+      "tags": [
+        "typography",
+        "motion",
+        "playful",
+        "gesture"
+      ],
+      "why": "Materials can create a recognizable motion personality when interactions have deliberate physics.",
+      "apply": "Playful campaign branding and creative exploration",
+      "caution": "Keep high-motion effects optional and out of high-stakes task flows."
+    },
+    {
+      "id": "042",
+      "title": "The Dance of Venus",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/042-dance-of-venus.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/042-dance-of-venus.txt",
+      "featured": false
+    },
+    {
+      "id": "043",
+      "title": "Lichen on Slate",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/043-lichen-on-slate.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/043-lichen-on-slate.txt",
+      "featured": false
+    },
+    {
+      "id": "044",
+      "title": "Ariadne's Thread",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/044-ariadnes-thread.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/044-ariadnes-thread.txt",
+      "featured": true,
+      "pattern": "Progress through a visible path metaphor",
+      "tags": [
+        "game",
+        "progress",
+        "education",
+        "interaction"
+      ],
+      "why": "A route that remembers where the user has been can make status, wayfinding, and discovery more concrete.",
+      "apply": "Guided onboarding, learning journeys, staged experiences",
+      "caution": "Pair the path metaphor with explicit labels and a linear alternative."
+    },
+    {
+      "id": "045",
+      "title": "Halden Grotesk — A Type Specimen",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/045-foundry-specimen-halden.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/045-foundry-specimen-halden.txt",
+      "featured": true,
+      "pattern": "Typography treated as a first-class product surface",
+      "tags": [
+        "typography",
+        "design-system",
+        "editorial",
+        "grid"
+      ],
+      "why": "Type construction, spacing, and specimen-like hierarchy create a distinct system without relying on decoration.",
+      "apply": "Editorial brands, component libraries, identity explorations",
+      "caution": "Use commercially licensed, readable fonts; do not copy glyph designs."
+    },
+    {
+      "id": "046",
+      "title": "Evening Snow at the Bridge",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/046-snow-at-the-bridge.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/046-snow-at-the-bridge.txt",
+      "featured": false
+    },
+    {
+      "id": "047",
+      "title": "Atelier Vesper — Calibre V.03",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/047-atelier-vesper-watch.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/047-atelier-vesper-watch.txt",
+      "featured": true,
+      "pattern": "Product detail as the main hero experience",
+      "tags": [
+        "commerce",
+        "luxury",
+        "technical",
+        "motion"
+      ],
+      "why": "A convincing hero focuses attention on the object's function, construction, and visual details.",
+      "apply": "Premium hardware, watches, and physical-product storytelling",
+      "caution": "Prefer authentic photos and accurate specifications for real products."
+    },
+    {
+      "id": "048",
+      "title": "Cross-Stitch Studio",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/048-cross-stitch-studio.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/048-cross-stitch-studio.txt",
+      "featured": true,
+      "pattern": "Craft-oriented tactile editor",
+      "tags": [
+        "interaction",
+        "craft",
+        "gesture",
+        "creative-tool"
+      ],
+      "why": "Expose the material and tools of the craft, then let direct manipulation produce a meaningful artifact.",
+      "apply": "Creative apps and hands-on tutorials",
+      "caution": "Do not make controls physically tiny or obscure for touch users."
+    },
+    {
+      "id": "049",
+      "title": "A Cabinet of Computed Shells",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/049-conchology-cabinet.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/049-conchology-cabinet.txt",
+      "featured": false
+    },
+    {
+      "id": "050",
+      "title": "The Aldwyn, Source to Sea",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/050-river-from-source-to-sea.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/050-river-from-source-to-sea.txt",
+      "featured": false
+    },
+    {
+      "id": "051",
+      "title": "Pinscreen",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/051-pinscreen.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/051-pinscreen.txt",
+      "featured": false
+    },
+    {
+      "id": "052",
+      "title": "BÉTON BRUT — Six Buildings Nobody Asked For",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/052-beton-brut-zine.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/052-beton-brut-zine.txt",
+      "featured": true,
+      "pattern": "Bold editorial layouts with strong architecture",
+      "tags": [
+        "editorial",
+        "brutalist",
+        "typography",
+        "scrollytelling"
+      ],
+      "why": "Large type, cropped composition, and page rhythm can make an editorial sequence feel intentionally art-directed.",
+      "apply": "Cultural publications, fashion editorials, bold campaigns",
+      "caution": "Avoid clipping essential text or replacing accessible navigation with aesthetic-only gestures."
+    },
+    {
+      "id": "053",
+      "title": "Sandpile",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/053-sandpile.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/053-sandpile.txt",
+      "featured": false
+    },
+    {
+      "id": "054",
+      "title": "Seven Sisters — A Nest of Dolls",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/054-matryoshka.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/054-matryoshka.txt",
+      "featured": false
+    },
+    {
+      "id": "055",
+      "title": "Kettlewick Observatory — Seismograph No. 2",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/055-seismograph-drum.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/055-seismograph-drum.txt",
+      "featured": false
+    },
+    {
+      "id": "056",
+      "title": "The Combination",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/056-the-combination.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/056-the-combination.txt",
+      "featured": false
+    },
+    {
+      "id": "057",
+      "title": "A Year of Daylight",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/057-a-year-of-daylight.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/057-a-year-of-daylight.txt",
+      "featured": false
+    },
+    {
+      "id": "058",
+      "title": "The Drawloom — Cloth from a Diagram",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/058-the-drawloom.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/058-the-drawloom.txt",
+      "featured": true,
+      "pattern": "Real-time visualization of an underlying system",
+      "tags": [
+        "data-viz",
+        "education",
+        "creative-tool",
+        "interaction"
+      ],
+      "why": "Connect structured inputs to an immediately visible output so users understand the mechanism.",
+      "apply": "Learning tools, technical editors, interactive data explainers",
+      "caution": "Keep labels clear, preserve undo, and support non-pointer input."
+    },
+    {
+      "id": "059",
+      "title": "Pluvia & Sons — Umbrella Makers",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/059-pluvia-and-sons-umbrellas.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/059-pluvia-and-sons-umbrellas.txt",
+      "featured": false
+    },
+    {
+      "id": "060",
+      "title": "TIDE.TXT",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/060-ascii-tide.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/060-ascii-tide.txt",
+      "featured": false
+    },
+    {
+      "id": "061",
+      "title": "The Moon Tonight",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/061-moon-tonight.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/061-moon-tonight.txt",
+      "featured": false
+    },
+    {
+      "id": "062",
+      "title": "Wheat, Before Rain",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/062-wheat-before-rain.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/062-wheat-before-rain.txt",
+      "featured": false
+    },
+    {
+      "id": "063",
+      "title": "The Astrolabe",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/063-the-astrolabe.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/063-the-astrolabe.txt",
+      "featured": false
+    },
+    {
+      "id": "064",
+      "title": "Par Avion — The Journey of One Letter",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/064-par-avion.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/064-par-avion.txt",
+      "featured": false
+    },
+    {
+      "id": "065",
+      "title": "Ripple Tank",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/065-ripple-tank.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/065-ripple-tank.txt",
+      "featured": false
+    },
+    {
+      "id": "066",
+      "title": "The Comet Diner, 3 A.M.",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/066-night-diner.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/066-night-diner.txt",
+      "featured": false
+    },
+    {
+      "id": "067",
+      "title": "A Short History of Fog in Port Verrow",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/067-a-short-history-of-fog.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/067-a-short-history-of-fog.txt",
+      "featured": false
+    },
+    {
+      "id": "068",
+      "title": "Torre di Gelato",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/068-gelato-tower.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/068-gelato-tower.txt",
+      "featured": false
+    },
+    {
+      "id": "069",
+      "title": "Strange Attractors — A Collection of Orbits",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/069-strange-attractors.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/069-strange-attractors.txt",
+      "featured": false
+    },
+    {
+      "id": "070",
+      "title": "Semaphore — Say It with Flags",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/070-semaphore.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/070-semaphore.txt",
+      "featured": false
+    },
+    {
+      "id": "071",
+      "title": "Apiary No. 9 — Hill Honey",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/071-apiary-no-9.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/071-apiary-no-9.txt",
+      "featured": true,
+      "pattern": "One motif carried through an entire brand identity",
+      "tags": [
+        "commerce",
+        "branding",
+        "material",
+        "storytelling"
+      ],
+      "why": "Repeatedly developing one real material or shape gives the page cohesion and recognizable craft.",
+      "apply": "Product brands and immersive landing pages",
+      "caution": "Use motion sparingly and don't prioritize a hero motif over purchase information."
+    },
+    {
+      "id": "072",
+      "title": "Lumen — Municipal Power Board, Pop. 2,140",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/072-lumen-town-grid.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/072-lumen-town-grid.txt",
+      "featured": false
+    },
+    {
+      "id": "073",
+      "title": "Zoetrope",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/073-zoetrope.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/073-zoetrope.txt",
+      "featured": false
+    },
+    {
+      "id": "074",
+      "title": "The Kelp Forest of 3n + 1",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/074-collatz-kelp.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/074-collatz-kelp.txt",
+      "featured": false
+    },
+    {
+      "id": "075",
+      "title": "Hell Box — Wood Type You Can Drop",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/075-wood-type-avalanche.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/075-wood-type-avalanche.txt",
+      "featured": true,
+      "pattern": "Make the end product a reward",
+      "tags": [
+        "creative-tool",
+        "interaction",
+        "typography",
+        "feedback"
+      ],
+      "why": "The user manipulates a system and receives a finished artifact, turning task completion into a meaningful reveal.",
+      "apply": "Maker tools, text design apps, interactive skill practice",
+      "caution": "Maintain transparent action feedback, reversible operations, and a nonanimated completion state."
+    },
+    {
+      "id": "079",
+      "title": "Formicarium — Notes on a Colony",
+      "liveUrl": "https://miaai-lab.github.io/Claude-Fable-5.2-HTML-Files/079-formicarium.html",
+      "originalPromptUrl": "https://github.com/MiaAI-Lab/Claude-Fable-5.2-HTML-Files/blob/main/079-formicarium.txt",
+      "featured": false
+    }
+  ]
+}

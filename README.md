@@ -107,3 +107,9 @@ External resources are optional references, not bundled code: [WCAG](https://www
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## Design inspiration references
+
+The [`inspiration/` library](inspiration/README.md) includes [Mia AI Lab's 76 HTML design studies](inspiration/mia-ai-lab-fable-5.2.md), their live demos and original prompts, plus twenty independently authored pattern notes for selecting relevant ideas. The machine-readable index is [`inspiration/mia-ai-lab-fable-5.2.json`](inspiration/mia-ai-lab-fable-5.2.json).
+
+For coding agents and Lovable, use inspiration as a **reference to interpret**, not a visual brand to clone or a substitute for usability evidence. Cite original creators; do not redistribute their assets without permission.
