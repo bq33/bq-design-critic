@@ -119,7 +119,9 @@ For coding agents and Lovable, use inspiration as a **reference to interpret**, 
 
 **Vibe-coded apps are cool. Lawyer fees aren't.** As the great poet Shawn Carter once said: “Chains is cool to cop ... more important is lawyer fees.”
 
-Use the [**Don't Get Sued** skill](skills/dont-get-sued/SKILL.md) with Lovable apps for evidence-based review of privacy, tracking, consent, subscriptions, app-store policies, intellectual property, security, AI, accessibility, and launch risks. It includes a [standalone MCP server, 34-control catalog, tests, sources and starter prompts](packages/dont-get-sued/README.md).
+Use the [**Don't Get Sued** skill](skills/dont-get-sued/SKILL.md) with Lovable apps for evidence-based review of privacy, tracking, consent, subscriptions, app-store policies, intellectual property, security, AI, accessibility, and launch risks. It includes a [standalone MCP server, 58-control catalog, tests, sources and starter prompts](packages/dont-get-sued/README.md).
+
+**Privacy module v1.1:** added 24 explicit [EU GDPR, EU ePrivacy, UK GDPR/PECR, and US state privacy checks](packages/dont-get-sued/references/PRIVACY_FRAMEWORKS.md), with separate applicability screening, evidence prompts and counsel handoff. The MCP includes `get_privacy_review` for focused framework checklists. [See the full package](packages/dont-get-sued/README.md).
 
 **THIS IS NOT LEGAL ADVICE. REVIEW YOUR APP WITH A QUALIFIED LAWYER OR LEGAL PROFESSIONAL TO ENSURE ALL APPLICABLE LEGAL REQUIREMENTS ARE MET BEFORE LAUNCH.**
 
