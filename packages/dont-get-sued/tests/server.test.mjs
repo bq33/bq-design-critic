@@ -72,6 +72,10 @@ test('EU/EEA, UK and US state country codes are distinct triage signals, not leg
  assert.equal(de.controls.find(x=>x.id==='EU-01').scope,'review');
  assert.equal(de.controls.find(x=>x.id==='UK-01').scope,'needs_context');
  assert.ok(de.profile.marketSignals.includes('EU'));
+ const eea=buildReviewPlan({profile:{regions:['EEA']}});
+ assert.equal(eea.controls.find(x=>x.id==='EU-01').scope,'review');
+ assert.ok(eea.profile.marketSignals.includes('EEA'));
+ assert.equal(eea.profile.marketSignals.includes('EU'),false);
  const no=buildReviewPlan({profile:{regions:['NO']}});
  assert.equal(no.controls.find(x=>x.id==='EU-01').scope,'review');
  assert.ok(no.profile.marketSignals.includes('EEA'));
@@ -82,6 +86,8 @@ test('EU/EEA, UK and US state country codes are distinct triage signals, not leg
  assert.equal(ca.controls.find(x=>x.id==='US-01').scope,'review');
  assert.equal(ca.controls.find(x=>x.id==='EU-01').scope,'needs_context');
  assert.ok(ca.privacyFrameworks.some(x=>x.framework==='eu_gdpr'));
+ const caNoAi=buildReviewPlan({profile:{regions:['US-CA'],features:{automated_decisions:false,profiling:false,ai:false,high_risk_processing:false,large_scale_data:false}}});
+ assert.ok(caNoAi.controls.some(x=>x.id==='US-02'),'California audit/risk screening must not vanish for non-AI apps');
 });
 test('privacy assessments without tested evidence stay unknown and never become compliance certification',()=>{
  const r=triageEvidence({profile:{regions:['DE'],features:{analytics:true}},assessments:[{id:'EPR-01',status:'issue',evidence:'Nonessential ad pixel fired before consent on fresh session.'}]});
