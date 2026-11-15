@@ -1,0 +1,604 @@
+{
+  "version": "1.0.0",
+  "last_source_review": "2026-11-14",
+  "warning": "This is not legal advice. Counsel must determine applicable law and review the actual app before launch.",
+  "controls": [
+    {
+      "id": "PRV-01",
+      "category": "Privacy",
+      "priority": "P1",
+      "basis": "best_practice",
+      "title": "Data inventory",
+      "action": "Map personal data purposes collection retention processors and region.",
+      "evidence": "Data inventory and data flow map.",
+      "source": "https://www.ftc.gov/business-guidance/privacy-security",
+      "conditions": {
+        "platforms": [],
+        "features_any": [],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "PRV-02",
+      "category": "Privacy",
+      "priority": "P0",
+      "basis": "platform_policy",
+      "title": "Live accurate privacy policy",
+      "action": "Link a true policy consistent with real collection sharing and deletion.",
+      "evidence": "Live public and in-app links plus current data inventory.",
+      "source": "https://developer.apple.com/app-store/review/guidelines/",
+      "conditions": {
+        "platforms": [],
+        "features_any": [],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "PRV-03",
+      "category": "Privacy",
+      "priority": "P1",
+      "basis": "conditional_jurisdiction",
+      "title": "Tracking consent and opt-out",
+      "action": "Test pixels analytics and reject or withdraw behavior by market.",
+      "evidence": "Browser network traces before consent after reject and withdrawal.",
+      "source": "https://cppa.ca.gov/regulations/",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "analytics",
+          "ads",
+          "session_replay"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "PRV-04",
+      "category": "Privacy",
+      "priority": "P1",
+      "basis": "conditional_jurisdiction",
+      "title": "California opt-out and GPC",
+      "action": "Assess CCPA applicability sale sharing and required opt-out signals.",
+      "evidence": "GPC and opt-out tests plus counsel applicability map.",
+      "source": "https://cppa.ca.gov/regulations/",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "ads",
+          "analytics",
+          "data_brokerage"
+        ],
+        "regions_any": [
+          "US-CA"
+        ]
+      }
+    },
+    {
+      "id": "PRV-05",
+      "category": "Privacy",
+      "priority": "P1",
+      "basis": "conditional_jurisdiction",
+      "title": "Privacy rights requests",
+      "action": "Assess access correction deletion opt-out and other rights by jurisdiction.",
+      "evidence": "Rights request flow and redacted test records.",
+      "source": "https://cppa.ca.gov/regulations/",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "accounts",
+          "stores_personal_data"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "PRV-06",
+      "category": "Privacy",
+      "priority": "P1",
+      "basis": "best_practice",
+      "title": "SDK and AI data sharing",
+      "action": "Audit processors and AI vendors for data transmission policies and retention.",
+      "evidence": "SDK inventory contracts disclosures and traffic tests.",
+      "source": "https://www.ftc.gov/business-guidance/privacy-security",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "third_party_sdk",
+          "ai",
+          "ads",
+          "analytics"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "PRV-07",
+      "category": "Privacy",
+      "priority": "P1",
+      "basis": "platform_policy",
+      "title": "Deletion and retention",
+      "action": "Test account/data deletion and retention representations.",
+      "evidence": "Delete test across storage backups and policy.",
+      "source": "https://support.google.com/googleplay/android-developer/answer/10144311",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "accounts",
+          "stores_personal_data"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "PRV-08",
+      "category": "Privacy",
+      "priority": "P1",
+      "basis": "conditional_jurisdiction",
+      "title": "Session replay masking",
+      "action": "Check consent and mask sensitive input to avoid recording secrets and PII.",
+      "evidence": "Vendor configuration masking evidence and counsel analysis.",
+      "source": "https://www.ftc.gov/business-guidance/privacy-security",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "session_replay"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "PRV-09",
+      "category": "Privacy",
+      "priority": "P2",
+      "basis": "risk_reduction",
+      "title": "Third-party fonts",
+      "action": "Check cross-domain font calls and consider self hosting.",
+      "evidence": "Network trace and font-host inventory.",
+      "source": "https://www.ftc.gov/business-guidance/privacy-security",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "remote_fonts"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "SEC-01",
+      "category": "Security",
+      "priority": "P0",
+      "basis": "best_practice",
+      "title": "No exposed secrets",
+      "action": "No server keys or private credentials in browser bundles or public repos.",
+      "evidence": "Redacted scan and bundle assessment.",
+      "source": "https://csrc.nist.gov/Projects/ssdf",
+      "conditions": {
+        "platforms": [],
+        "features_any": [],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "SEC-02",
+      "category": "Security",
+      "priority": "P0",
+      "basis": "best_practice",
+      "title": "Server authorization",
+      "action": "Test protected APIs and cross-account authorization with dummy identities.",
+      "evidence": "Protected-route matrix and safe authorization tests.",
+      "source": "https://csrc.nist.gov/Projects/ssdf",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "accounts",
+          "api"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "SEC-03",
+      "category": "Security",
+      "priority": "P0",
+      "basis": "best_practice",
+      "title": "Database and storage permissions",
+      "action": "Review Supabase RLS and storage or equivalent authorization protections.",
+      "evidence": "Policies and authorized or unauthorized tests.",
+      "source": "https://csrc.nist.gov/Projects/ssdf",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "database"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "SEC-04",
+      "category": "Security",
+      "priority": "P1",
+      "basis": "best_practice",
+      "title": "Login account protection",
+      "action": "Use proper password handling rate limiting recovery and session security.",
+      "evidence": "Managed auth configuration and safe tests.",
+      "source": "https://csrc.nist.gov/Projects/ssdf",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "accounts"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "SEC-05",
+      "category": "Security",
+      "priority": "P1",
+      "basis": "best_practice",
+      "title": "Backups and incident preparedness",
+      "action": "Separate environments and verify restoration and breach response.",
+      "evidence": "Environment diagram and test restore.",
+      "source": "https://csrc.nist.gov/Projects/ssdf",
+      "conditions": {
+        "platforms": [],
+        "features_any": [],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "SEC-06",
+      "category": "Security",
+      "priority": "P1",
+      "basis": "best_practice",
+      "title": "Independent security review",
+      "action": "Obtain source-first security audit and retest confirmed risks.",
+      "evidence": "Dated report findings and verifications.",
+      "source": "https://github.com/cloudflare/security-audit-skill",
+      "conditions": {
+        "platforms": [],
+        "features_any": [],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "KID-01",
+      "category": "Children",
+      "priority": "P0",
+      "basis": "conditional_jurisdiction",
+      "title": "COPPA applicability",
+      "action": "Assess child-directed service or actual knowledge of under-13 data before collection.",
+      "evidence": "Audience and data review parental notice and counsel sign-off.",
+      "source": "https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "child_directed",
+          "children_under_13",
+          "age_uncertain"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "MKT-01",
+      "category": "Marketing",
+      "priority": "P1",
+      "basis": "law",
+      "title": "Commercial email obligations",
+      "action": "Check postal address accurate headers unsubscribe and timely opt-out.",
+      "evidence": "Campaign sample footer suppression and opt-out test.",
+      "source": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "marketing_email"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "MKT-02",
+      "category": "Marketing",
+      "priority": "P1",
+      "basis": "conditional_jurisdiction",
+      "title": "SMS marketing consent",
+      "action": "Review phone marketing consent obligations by market.",
+      "evidence": "Source and scope of recorded consent plus opt-out test.",
+      "source": "https://www.ftc.gov/business-guidance/advertising-marketing",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "sms_marketing",
+          "telemarketing"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "MKT-03",
+      "category": "Marketing",
+      "priority": "P1",
+      "basis": "law",
+      "title": "Truthful marketing claims",
+      "action": "Substantiate ratings testimonials prices AI and product claims.",
+      "evidence": "Claim ledger testimonial permissions and actual offer.",
+      "source": "https://www.ftc.gov/business-guidance/advertising-marketing",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "marketing_claims"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "PAY-01",
+      "category": "Commerce",
+      "priority": "P0",
+      "basis": "conditional_jurisdiction",
+      "title": "Subscription renewal disclosures",
+      "action": "Review trial price cadence consent and cancellation under state or store rules.",
+      "evidence": "Checkout screenshots consent records cancellation test.",
+      "source": "https://www.oag.ca.gov/news/press-releases/attorney-general-bonta-issues-consumer-alert-california%E2%80%99s-automatic-renewal-law",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "subscriptions"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "PAY-02",
+      "category": "Commerce",
+      "priority": "P1",
+      "basis": "best_practice",
+      "title": "Transparent charges and refunds",
+      "action": "Display material fees and refund terms accurately before checkout.",
+      "evidence": "Checkout receipt refund policy and screenshots.",
+      "source": "https://www.ftc.gov/business-guidance/advertising-marketing",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "checkout",
+          "subscriptions",
+          "payments"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "PAY-03",
+      "category": "Commerce",
+      "priority": "P1",
+      "basis": "platform_policy",
+      "title": "App store payment rules",
+      "action": "Evaluate digital purchase IAP requirements and permitted exceptions.",
+      "evidence": "Platform policy mapping and purchase test.",
+      "source": "https://developer.apple.com/app-store/review/guidelines/",
+      "conditions": {
+        "platforms": [
+          "ios",
+          "android"
+        ],
+        "features_any": [
+          "checkout",
+          "payments",
+          "subscriptions"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "PAY-04",
+      "category": "Commerce",
+      "priority": "P1",
+      "basis": "best_practice",
+      "title": "Payment processor scope",
+      "action": "Avoid collecting card data directly and assess PCI scope.",
+      "evidence": "Payment dataflow and processor agreements.",
+      "source": "https://www.pcisecuritystandards.org/",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "checkout",
+          "payments",
+          "subscriptions"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "UGC-01",
+      "category": "Content",
+      "priority": "P1",
+      "basis": "conditional_jurisdiction",
+      "title": "User content terms",
+      "action": "Clarify uploader rights granted license and moderation policy.",
+      "evidence": "Upload UX agreement and moderation process.",
+      "source": "https://www.copyright.gov/dmca-directory/",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "user_uploads",
+          "user_content"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "UGC-02",
+      "category": "Content",
+      "priority": "P1",
+      "basis": "conditional_jurisdiction",
+      "title": "DMCA safe harbor review",
+      "action": "If relying on 512 protections evaluate designated agent and notice process.",
+      "evidence": "Counsel analysis agent registration if appropriate.",
+      "source": "https://www.copyright.gov/dmca-directory/",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "user_uploads",
+          "user_content"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "IP-01",
+      "category": "Intellectual Property",
+      "priority": "P1",
+      "basis": "law",
+      "title": "Licensed assets and brand",
+      "action": "Verify image font code music copy and trademark rights and permissions.",
+      "evidence": "Asset license inventory and approvals.",
+      "source": "https://www.copyright.gov/help/faq/faq-fairuse.html",
+      "conditions": {
+        "platforms": [],
+        "features_any": [],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "IP-02",
+      "category": "Intellectual Property",
+      "priority": "P1",
+      "basis": "conditional_jurisdiction",
+      "title": "AI generated content rights",
+      "action": "Review provider terms training data output similarity and distribution rights.",
+      "evidence": "Model terms and asset review.",
+      "source": "https://developer.apple.com/app-store/review/guidelines/",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "ai",
+          "generated_content"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "STORE-01",
+      "category": "App Stores",
+      "priority": "P0",
+      "basis": "platform_policy",
+      "title": "Privacy in mobile apps",
+      "action": "Provide policy within app and store listing with accurate data disclosures.",
+      "evidence": "iOS Android screens and store metadata.",
+      "source": "https://developer.apple.com/app-store/review/guidelines/",
+      "conditions": {
+        "platforms": [
+          "ios",
+          "android"
+        ],
+        "features_any": [],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "STORE-02",
+      "category": "App Stores",
+      "priority": "P1",
+      "basis": "platform_policy",
+      "title": "Mobile account deletion",
+      "action": "Provide effective deletion in-app if accounts can be created.",
+      "evidence": "Actual delete flow and backend result.",
+      "source": "https://support.google.com/googleplay/android-developer/answer/10144311",
+      "conditions": {
+        "platforms": [
+          "ios",
+          "android"
+        ],
+        "features_any": [
+          "accounts"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "A11Y-01",
+      "category": "Accessibility",
+      "priority": "P1",
+      "basis": "conditional_jurisdiction",
+      "title": "Accessible use",
+      "action": "Test critical keyboard screen reader mobile and contrast journeys.",
+      "evidence": "WCAG-guided manual and automated test evidence.",
+      "source": "https://www.w3.org/TR/WCAG22/",
+      "conditions": {
+        "platforms": [],
+        "features_any": [],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "DOC-01",
+      "category": "Legal Documents",
+      "priority": "P1",
+      "basis": "conditional_jurisdiction",
+      "title": "Terms assent and EULA",
+      "action": "Determine applicable terms and have counsel approve; securely track versioned assent where needed.",
+      "evidence": "Legal approvals and consent recording tests.",
+      "source": "https://developer.apple.com/app-store/review/guidelines/",
+      "conditions": {
+        "platforms": [],
+        "features_any": [],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "DOC-02",
+      "category": "Legal Documents",
+      "priority": "P1",
+      "basis": "best_practice",
+      "title": "Support and business identity",
+      "action": "Provide genuine contacts and required business identification.",
+      "evidence": "Support route and public footer.",
+      "source": "https://developer.apple.com/app-store/review/guidelines/",
+      "conditions": {
+        "platforms": [],
+        "features_any": [],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "AI-01",
+      "category": "Artificial Intelligence",
+      "priority": "P1",
+      "basis": "conditional_jurisdiction",
+      "title": "AI transparency and accuracy",
+      "action": "Map AI inputs outputs safeguards provider sharing and claims.",
+      "evidence": "AI risk review evaluation and data flow.",
+      "source": "https://www.ftc.gov/business-guidance/advertising-marketing",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "ai",
+          "generated_content"
+        ],
+        "regions_any": []
+      }
+    },
+    {
+      "id": "REG-01",
+      "category": "Regulated Areas",
+      "priority": "P0",
+      "basis": "conditional_jurisdiction",
+      "title": "Regulated features counsel gate",
+      "action": "Seek specialty review for health kids biometrics finance employment or education.",
+      "evidence": "Qualified counsel signoff scoped to feature and market.",
+      "source": "https://www.ftc.gov/business-guidance/privacy-security",
+      "conditions": {
+        "platforms": [],
+        "features_any": [
+          "health",
+          "biometrics",
+          "finance",
+          "employment",
+          "education_records",
+          "regulated"
+        ],
+        "regions_any": []
+      }
+    }
+  ]
+}
