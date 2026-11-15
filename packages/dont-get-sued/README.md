@@ -10,8 +10,8 @@ Run this skill with your **Lovable apps** to reduce avoidable legal and operatio
 ## What you get
 
 - A reusable [Lovable agent skill](../../skills/dont-get-sued/SKILL.md), already installable without an MCP connection.
-- **34 evidence-first review controls**, classified as legal, jurisdiction-dependent, platform-policy, best-practice or optional risk reduction.
-- **Five local MCP tools** for review planning, prioritization, code-pattern signals and factual handoff to counsel.
+- **58 evidence-first review controls**, including 24 EU/UK/US privacy enhancements, classified as legal, jurisdiction-dependent, platform-policy, best-practice or optional risk reduction.
+- **Six local MCP tools** for review planning, prioritization, code-pattern signals and factual handoff to counsel.
 - Review prompts, official legal-source references and automated tests.
 - No outsourced server, dependencies, outbound analytics, repository access or automatic deployment.
 
@@ -53,11 +53,44 @@ A GitHub URL alone does not install a local stdio MCP server into Lovable. Use t
 
 | MCP tool | What it does |
 |---|---|
-| `get_legal_risk_catalog` | Returns all 34 cited review controls |
+| `get_legal_risk_catalog` | Returns all 58 sourced review controls; supports `category` filter |
+| `get_privacy_review` | Retrieves EU GDPR, EU ePrivacy, UK GDPR/PECR or US state privacy checklist and jurisdiction screening signals |
 | `build_review_plan` | Selects context-relevant controls; unknown never means absent |
 | `triage_legal_risk_evidence` | Ranks evidence and unverified requirements; never approves launch |
 | `scan_source_signals` | Examines *agent-supplied snippets* for possible issues; not a security audit |
 | `prepare_counsel_handoff` | Creates factual review questions and outstanding matters for a qualified lawyer |
+
+## Privacy-first modules (v1.1)
+
+Privacy is now a first-class review category. See the [privacy field guide](references/PRIVACY_FRAMEWORKS.md), [58 control definitions](rules.json) and [primary sources](references/LEGAL_SOURCES.md). The **24 added privacy controls** are: EU GDPR (14), EU ePrivacy (2), UK privacy including UK GDPR/PECR (5), and US state privacy (3). The existing privacy checks remain.
+
+Ask the Lovable skill: `Run Don't Get Sued on this app with an EU GDPR + UK GDPR + US state privacy focus; show evidence, unknown jurisdiction questions and a counsel handoff. Do not modify the app.`
+
+Compatible MCP clients can call `get_privacy_review` with one of these framework values: `eu_gdpr`, `eu_eprivacy`, `uk_privacy`, `us_state`.
+
+Example MCP tool arguments:
+
+```json
+{
+  "framework": "eu_gdpr",
+  "profile": {
+    "app_name": "Example",
+    "platforms": ["web", "ios"],
+    "regions": ["DE", "GB", "US-CA"],
+    "features": {
+      "accounts": true,
+      "analytics": true,
+      "cloud_hosting": true,
+      "international_transfers": true,
+      "ai": false
+    }
+  }
+}
+```
+
+`regions` accepts ISO-style country signals (e.g. `DE`, `FR`, `NO`, `GB`), `EU`/`EEA`, or US state codes (e.g. `US-CA`). These aid triage only. **A region match does not establish legal applicability, and a missing region does not establish an exemption.** Assess targeting, establishments, monitoring, business thresholds and data practices with counsel. The UK is assessed separately from the EU/EEA.
+
+No change to the read-only, no-secrets, no-automatic-deploy safeguards. The MCP server doesn't browse, inspect projects or make legal determinations.
 
 ## Ground rules
 
