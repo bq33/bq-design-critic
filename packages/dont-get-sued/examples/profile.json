@@ -1,0 +1,23 @@
+{
+  "app_name": "Example study app",
+  "platforms": [
+    "web",
+    "ios"
+  ],
+  "regions": [
+    "US-CA"
+  ],
+  "features": {
+    "accounts": true,
+    "database": true,
+    "stores_personal_data": true,
+    "analytics": true,
+    "marketing_email": true,
+    "subscriptions": true,
+    "payments": true,
+    "ai": false,
+    "user_uploads": false,
+    "child_directed": false,
+    "age_uncertain": true
+  }
+}
