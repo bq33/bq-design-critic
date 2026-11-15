@@ -14,3 +14,9 @@
 
 **Lawyer handoff**
 > Prepare a compact factual packet of policies, consent evidence, data inventory, third-party AI/SDKs, user age, marketing, subscriptions, UGC/IP and jurisdiction questions. Do not conclude the app is legally compliant.
+
+## Privacy (EU GDPR / UK GDPR / US states)
+
+> Activate `dont-get-sued` and run the privacy-framework review for this Lovable app. Inspect actual data collection, storage, vendors and UI. Screen EU GDPR (Art. 3, 6, 9, 12–14, 15–22, 25, 28, 33–35, transfers), EU ePrivacy cookies/pixels, UK GDPR/PECR as amended by DUAA 2025, and US state privacy (CCPA/CPRA and relevant states). Use real source or sanitized test evidence, show what is unverified, rank P0–P3 issues, and prepare a counsel handoff. **Do not edit or publish yet.**
+
+> Specifically inspect consent before nonessential trackers load, Reject and withdrawal, personal-data access/export/deletion, AI vendor sharing, DPA/subprocessor and cross-border transfer evidence, and privacy notice accuracy. Differentiate legal requirements, store policies and engineering practices. Don't certify compliance.
