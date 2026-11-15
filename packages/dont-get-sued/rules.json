@@ -1051,18 +1051,12 @@
       "priority": "P1",
       "basis": "conditional_jurisdiction",
       "title": "California 2026 risk, audit and ADMT regulations",
-      "action": "Screen CCPA-covered businesses for applicable risk assessments, cybersecurity audits and ADMT significant-decision duties; distinguish Jan. 2026 effective date from later compliance deadlines.",
-      "evidence": "Business threshold assessment, processing inventory, ADMT use cases, assessment calendar and risk/audit evidence.",
+      "action": "Screen CCPA-covered businesses for risk assessments, cybersecurity audits and ADMT significant-decision duties; evaluate size, revenue, processing, thresholds and phased compliance dates separately.",
+      "evidence": "Business eligibility assessment, applicable processing/threshold facts, ADMT significant-decision screening, compliance calendar and risk/audit evidence.",
       "source": "https://cppa.ca.gov/regulations/ccpa_updates",
       "conditions": {
         "platforms": [],
-        "features_any": [
-          "automated_decisions",
-          "profiling",
-          "ai",
-          "high_risk_processing",
-          "large_scale_data"
-        ],
+        "features_any": [],
         "regions_any": [
           "US-CA"
         ]
