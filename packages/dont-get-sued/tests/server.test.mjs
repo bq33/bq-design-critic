@@ -3,14 +3,14 @@ import test from 'node:test';
 import {spawn} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
-import {getCatalog,buildReviewPlan,triageEvidence,scanSourceSignals,prepareCounselHandoff,processMessage} from '../src/server.mjs';
+import {getCatalog,getPrivacyReview,buildReviewPlan,triageEvidence,scanSourceSignals,prepareCounselHandoff,processMessage} from '../src/server.mjs';
 
 const profile={app_name:'Example',platforms:['web','ios'],regions:['US-CA'],features:{accounts:true,analytics:true,subscriptions:true,database:true,payments:true,marketing_email:false,user_uploads:false,user_content:false}};
 
-test('34 unique sourced controls and disclaimer',()=>{
+test('58 unique sourced controls and disclaimer',()=>{
  const c=getCatalog();
- assert.equal(c.controlCount,34);
- assert.equal(new Set(c.controls.map(x=>x.id)).size,34);
+ assert.equal(c.controlCount,58);
+ assert.equal(new Set(c.controls.map(x=>x.id)).size,58);
  assert.ok(c.controls.every(x=>x.source?.startsWith('https://')&&x.evidence));
  assert.match(c.disclaimer,/NOT LEGAL ADVICE/);
 });
@@ -55,6 +55,45 @@ test('lawyer packet always requires counsel',()=>{
  assert.equal(r.verifiedTechnicalEvidence.length,1);
  assert.ok(r.counselQuestions.length>2);
 });
+test('privacy modules cover EU GDPR, ePrivacy, UK GDPR/PECR and US state privacy',()=>{
+ const modules=[['eu_gdpr','EU GDPR',14],['eu_eprivacy','EU ePrivacy',2],['uk_privacy','UK Privacy',5],['us_state','US State Privacy',3]];
+ for(const [framework,category,n] of modules){
+  const r=getPrivacyReview({framework,profile:{regions:['US-CA']}});
+  assert.equal(r.category,category);
+  assert.equal(r.controlCount,n);
+  assert.equal(r.applicability,'COUNSEL_REVIEW_REQUIRED');
+  assert.ok(r.controls.every(x=>x.source.startsWith('https://')));
+  assert.equal(r.noLegalComplianceDetermination,true);
+ }
+ assert.throws(()=>getPrivacyReview({framework:'not_a_real_law'}),/Unknown privacy framework/);
+});
+test('EU/EEA, UK and US state country codes are distinct triage signals, not legal verdicts',()=>{
+ const de=buildReviewPlan({profile:{regions:['DE']}});
+ assert.equal(de.controls.find(x=>x.id==='EU-01').scope,'review');
+ assert.equal(de.controls.find(x=>x.id==='UK-01').scope,'needs_context');
+ assert.ok(de.profile.marketSignals.includes('EU'));
+ const no=buildReviewPlan({profile:{regions:['NO']}});
+ assert.equal(no.controls.find(x=>x.id==='EU-01').scope,'review');
+ assert.ok(no.profile.marketSignals.includes('EEA'));
+ const uk=buildReviewPlan({profile:{regions:['GB']}});
+ assert.equal(uk.controls.find(x=>x.id==='UK-01').scope,'review');
+ assert.equal(uk.controls.find(x=>x.id==='EU-01').scope,'needs_context');
+ const ca=buildReviewPlan({profile:{regions:['US-CA']}});
+ assert.equal(ca.controls.find(x=>x.id==='US-01').scope,'review');
+ assert.equal(ca.controls.find(x=>x.id==='EU-01').scope,'needs_context');
+ assert.ok(ca.privacyFrameworks.some(x=>x.framework==='eu_gdpr'));
+});
+test('privacy assessments without tested evidence stay unknown and never become compliance certification',()=>{
+ const r=triageEvidence({profile:{regions:['DE'],features:{analytics:true}},assessments:[{id:'EPR-01',status:'issue',evidence:'Nonessential ad pixel fired before consent on fresh session.'}]});
+ assert.equal(r.legalComplianceDetermined,false);
+ assert.equal(r.shipDecision,'NOT_ISSUED_COUNSEL_REVIEW_REQUIRED');
+ assert.ok(r.unknowns.some(x=>x.id==='EU-02'));
+ assert.ok(r.issues.some(x=>x.id==='EPR-01'));
+ const counsel=prepareCounselHandoff({profile:{regions:['DE']},assessments:[]});
+ assert.equal(counsel.releaseApproval,'NOT PROVIDED');
+ assert.ok(counsel.counselQuestions.some(q=>q.includes('EU GDPR')));
+ assert.ok(counsel.privacyFrameworkScreening.length>=4);
+});
 test('MCP stdio handshake, tool discovery and invocation',async()=>{
  assert.equal(processMessage({jsonrpc:'2.0',method:'notifications/initialized'}),null);
  const src=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../src/server.mjs');
@@ -72,6 +111,6 @@ test('MCP stdio handshake, tool discovery and invocation',async()=>{
  child.kill();
  assert.equal(responses.length,3);
  assert.equal(responses[0].result.serverInfo.name,'dont-get-sued');
- assert.equal(responses[1].result.tools.length,5);
+ assert.equal(responses[1].result.tools.length,6);
  assert.ok(responses[2].result.structuredContent.counts.proposedChecks>15);
 });
