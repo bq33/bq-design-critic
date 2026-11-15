@@ -19,7 +19,6 @@ function marketSignals(regions){
     tags.add(code);
     if(code==='UK'||code==='GB'){tags.add('UK');tags.add('GB');}
     if(code==='EU'){tags.add('EEA');}
-    if(code==='EEA'){tags.add('EU');}
     if(code==='US'||code.startsWith('US-'))tags.add('US');
     const country=code.startsWith('EU-')?code.slice(3):code;
     if(euMembers.has(country)){tags.add('EU');tags.add('EEA');}
