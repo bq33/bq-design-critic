@@ -12,6 +12,20 @@ Use these as a quality layer alongside existing product design and business requ
 
 COPPA, CCPA, DMCA safe harbor and California auto-renewal applicability all depend on actual facts. The FTC 2024 federal Click-to-Cancel rule was subsequently vacated. A one-click provider email requirement is not the same as CAN-SPAM. Self-hosted fonts are a mitigation, not an everywhere legal mandate. A policy disclaimer alone is not protection from liability.
 
+## Privacy module activation (GDPR, UK, US states)
+
+When an app collects or shares personal data, explicitly screen **EU GDPR**, **EU ePrivacy**, **UK GDPR and PECR**, and **relevant US state privacy laws**. Start with legal entity, user markets, actual targeting/monitoring and business thresholds. A website reachable from Europe alone does not prove GDPR applicability. Do not treat the UK as an EU market. Missing data is "unverified," not "not applicable."
+
+If EU/EEA may be relevant: inspect purpose-by-purpose Art. 6 lawful basis, Art. 9 special-category conditions, Arts. 12–14 notices, Arts. 15–22 rights, Art. 7 consent and withdrawal, Art. 25 privacy defaults, Art. 28 processor DPAs, Art. 30 processing records, Arts. 33–34 breach handling, Art. 35 DPIA screening, Chapter V transfers and DPO/representative triggers. Check ePrivacy consent/exemptions for cookies, pixels and SDK/device access separately.
+
+If UK may be relevant: examine the **2025 Data (Use and Access) Act** amendments now in force, complaints and children’s protection, current UK PECR storage/access rules and exceptions, UK lawful bases and UK transfer mechanisms. Do not automatically apply EU cookie rules to UK processing.
+
+For the US: document state-by-state thresholds, rights, opt-out/Global Privacy Control and sensitive-data requirements. Review California’s 2026 CPPA regulations with phased deadlines; significant-decision ADMT requirements start in January 2027 for covered businesses. Colorado separately recognizes universal opt-out mechanisms.
+
+Collect sanitized data flow maps, privacy-policy evidence, before/after-consent network traces, access/deletion test logs, retention schedules, vendor/subprocessor contracts, cross-border transfer mapping, incident runbooks and DPIA screening. Produce an explicit applicability-question list and counsel packet. **Never announce GDPR/CCPA compliance, publish legal notices or enable legally consequential consent settings solely from the skill.**
+
+Guide: https://github.com/bq33/bq-design-critic/blob/main/packages/dont-get-sued/references/PRIVACY_FRAMEWORKS.md
+
 Output: **Verdict → Evidence-backed P0/P1 → P2/P3 → Unknowns → Top three fixes → Lawyer handoff → Verified vs unverified**.
 
 Source skill: https://github.com/bq33/bq-design-critic/blob/main/skills/dont-get-sued/SKILL.md
