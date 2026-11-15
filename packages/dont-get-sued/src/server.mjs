@@ -9,6 +9,24 @@ const rules=JSON.parse(readFileSync(path.resolve(path.dirname(fileURLToPath(impo
 const order={P0:0,P1:1,P2:2,P3:3};
 const known=new Map(rules.controls.map(r=>[r.id,r]));
 const warning='NOT LEGAL ADVICE. Review the actual app with a qualified lawyer or legal professional. This tool neither certifies compliance nor prevents litigation.';
+const euMembers=new Set('AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE'.split(' '));
+const eeaOthers=new Set(['IS','LI','NO']);
+const frameworkCategories={eu_gdpr:'EU GDPR',eu_eprivacy:'EU ePrivacy',uk_privacy:'UK Privacy',us_state:'US State Privacy'};
+function marketSignals(regions){
+  const tags=new Set();
+  for(const raw of regions){
+    const code=raw.toUpperCase().trim();
+    tags.add(code);
+    if(code==='UK'||code==='GB'){tags.add('UK');tags.add('GB');}
+    if(code==='EU'){tags.add('EEA');}
+    if(code==='EEA'){tags.add('EU');}
+    if(code==='US'||code.startsWith('US-'))tags.add('US');
+    const country=code.startsWith('EU-')?code.slice(3):code;
+    if(euMembers.has(country)){tags.add('EU');tags.add('EEA');}
+    if(eeaOthers.has(country))tags.add('EEA');
+  }
+  return [...tags].sort();
+}
 function array(v,name) {
   if(v===undefined||v===null) return [];
   if(!Array.isArray(v)||v.some(x=>typeof x!=='string'||x.length>80)) throw Error(name+' must be an array of short strings');
@@ -19,7 +37,8 @@ export function profileOf(p={}) {
   const f=p.features??{};
   if(!f||typeof f!=='object'||Array.isArray(f)) throw Error('features must be an object');
   for(const [key,value] of Object.entries(f)) if(!/^[a-z0-9_]{1,60}$/.test(key)||typeof value!=='boolean') throw Error('feature keys must be snake_case and values boolean');
-  return {app_name:typeof p.app_name==='string'?p.app_name.slice(0,120):'Unspecified app',platforms:array(p.platforms,'platforms').map(s=>s.toLowerCase()),regions:array(p.regions,'regions').map(s=>s.toUpperCase()),features:{...f}};
+  const regions=array(p.regions,'regions').map(s=>s.toUpperCase());
+  return {app_name:typeof p.app_name==='string'?p.app_name.slice(0,120):'Unspecified app',platforms:array(p.platforms,'platforms').map(s=>s.toLowerCase()),regions,marketSignals:marketSignals(regions),features:{...f}};
 }
 function relevance(r,p){
   const c=r.conditions??{}, reasons=[];
@@ -34,7 +53,7 @@ function relevance(r,p){
   }
   if(c.regions_any?.length){
     if(!p.regions.length) reasons.push('Markets not specified');
-    else if(!c.regions_any.some(v=>p.regions.includes(v))) reasons.push('Market not listed; counsel must assess extraterritorial rules');
+    else if(!c.regions_any.some(v=>p.marketSignals.includes(v))) reasons.push('Market not listed; evaluate establishment, targeting and monitoring before excluding extraterritorial rules');
   }
   return {scope:reasons.length?'needs_context':'review',note:reasons.join('; ')||'Assess actual facts and legal applicability.'};
 }
@@ -42,11 +61,17 @@ export function getCatalog({category}={}){
   const controls=category?rules.controls.filter(c=>c.category.toLowerCase()===String(category).toLowerCase()):rules.controls;
   return {version:rules.version,lastSourceReview:rules.last_source_review,controlCount:controls.length,controls,disclaimer:warning};
 }
+export function getPrivacyReview({framework='eu_gdpr',profile={}}={}){
+  if(!Object.hasOwn(frameworkCategories,framework))throw Error('Unknown privacy framework');
+  const p=profileOf(profile), category=frameworkCategories[framework];
+  const controls=rules.controls.filter(r=>r.category===category).map(r=>({...r,...relevance(r,p)}));
+  return {framework,category,profile:p,controlCount:controls.length,controls,applicability:'COUNSEL_REVIEW_REQUIRED',noLegalComplianceDetermination:true,notes:['Country and market signals are triage hints only, not a territorial-scope determination','Check establishment, offering/targeting and monitoring as relevant','Country codes: DE and FR imply EU/EEA; NO implies EEA; GB or UK implies UK; US-CA implies US'],disclaimer:warning};
+}
 export function buildReviewPlan({profile={}}={}){
   const p=profileOf(profile);
   const all=rules.controls.map(r=>({...r,...relevance(r,p)})).sort((a,b)=>order[a.priority]-order[b.priority]||a.id.localeCompare(b.id));
   const applicable=all.filter(r=>r.scope!=='not_targeted');
-  return {profile:p,catalogVersion:rules.version,counts:{proposedChecks:applicable.length,contextualChecks:applicable.filter(r=>r.scope==='needs_context').length,notTargeted:all.length-applicable.length},controls:applicable,notTargeted:all.filter(r=>r.scope==='not_targeted').map(r=>({id:r.id,title:r.title,why:r.note})),legalAdvice:false,instructions:['Unknown feature is not presumed absent','A verified technical state does not prove legal compliance','Obtain lawyer review of applicable laws and documents'],disclaimer:warning};
+  return {profile:p,catalogVersion:rules.version,privacyFrameworks:Object.entries(frameworkCategories).map(([key,category])=>({framework:key,category,checks:applicable.filter(r=>r.category===category).length,possibleScope:'COUNSEL_REVIEW_REQUIRED'})),counts:{proposedChecks:applicable.length,contextualChecks:applicable.filter(r=>r.scope==='needs_context').length,notTargeted:all.length-applicable.length},controls:applicable,notTargeted:all.filter(r=>r.scope==='not_targeted').map(r=>({id:r.id,title:r.title,why:r.note})),legalAdvice:false,instructions:['Unknown feature is not presumed absent','A verified technical state does not prove legal compliance','Obtain lawyer review of applicable laws and documents'],disclaimer:warning};
 }
 export function triageEvidence({profile={},assessments=[]}={}){
   if(!Array.isArray(assessments)||assessments.length>rules.controls.length) throw Error('assessments exceeds catalog or is not an array');
@@ -94,18 +119,19 @@ export function scanSourceSignals({files=[]}={}){
 export function prepareCounselHandoff({profile={},assessments=[],notes=''}={}){
   if(typeof notes!=='string'||notes.length>4000) throw Error('notes must be a short string');
   const r=triageEvidence({profile,assessments});
-  return {title:'Legal review handoff: '+r.profile.app_name,disclaimer:warning,profile:r.profile,verifiedTechnicalEvidence:r.verified,observedGaps:r.issues,unverified:r.unknowns,counselQuestions:['Which laws and store policies apply to this app?','What agreements, notices, choices and user rights are required?','What is required for under-13 users, subscriptions, UGC, AI and regulated data?','What external counsel approvals and release gates are outstanding?'],additionalNotes:notes,releaseApproval:'NOT PROVIDED'};
+  return {title:'Legal review handoff: '+r.profile.app_name,disclaimer:warning,profile:r.profile,verifiedTechnicalEvidence:r.verified,observedGaps:r.issues,unverified:r.unknowns,privacyFrameworkScreening:buildReviewPlan({profile}).privacyFrameworks,counselQuestions:['Which EU GDPR, EU ePrivacy, UK GDPR/PECR and US state laws apply based on establishments, targeted markets, monitoring and thresholds?','For each processing purpose, what lawful basis, notice, user rights, retention and vendor/DPA obligations apply?','Are SCCs or other cross-border transfer safeguards, DPIAs, breach notification, representatives or DPOs required?','What agreements, notices, choices, privacy complaints process and account deletion are needed?','What is required for under-13 users, subscriptions, UGC, AI and regulated data?','What external counsel approvals and release gates are outstanding?'],additionalNotes:notes,releaseApproval:'NOT PROVIDED'};
 }
 const profileSchema={type:'object',properties:{app_name:{type:'string'},platforms:{type:'array',items:{type:'string'}},regions:{type:'array',items:{type:'string'}},features:{type:'object',additionalProperties:{type:'boolean'}}}};
 const assessmentSchema={type:'array',items:{type:'object',required:['id','status'],properties:{id:{type:'string',enum:[...known.keys()]},status:{type:'string',enum:['verified','issue','unverified','not_applicable']},evidence:{type:'string'},verification:{type:'string'},owner:{type:'string'}}}};
 const mcpTools=[
-{name:'get_legal_risk_catalog',description:'Sourced risk-control catalog. Not legal advice.',inputSchema:{type:'object',properties:{category:{type:'string'}}}},
+{name:'get_legal_risk_catalog',description:'Sourced risk-control catalog. Filter category (e.g. EU GDPR). Not legal advice.',inputSchema:{type:'object',properties:{category:{type:'string'}}}},
+{name:'get_privacy_review',description:'Evidence checklist for EU GDPR, EU ePrivacy, UK GDPR/PECR or US state privacy. Triage only; no legal conclusion.',inputSchema:{type:'object',properties:{framework:{type:'string',enum:Object.keys(frameworkCategories)},profile:profileSchema}}},
 {name:'build_review_plan',description:'Context-sensitive prelaunch checklist. Unknown is unverified.',inputSchema:{type:'object',properties:{profile:profileSchema}}},
 {name:'triage_legal_risk_evidence',description:'Prioritize supplied evidence and unknowns. Never legal approval.',inputSchema:{type:'object',required:['assessments'],properties:{profile:profileSchema,assessments:assessmentSchema}}},
 {name:'scan_source_signals',description:'Review provided code snippets only. Pattern leads, not validated vulnerabilities.',inputSchema:{type:'object',required:['files'],properties:{files:{type:'array',items:{type:'object',required:['path','content'],properties:{path:{type:'string'},content:{type:'string'}}}}}}},
 {name:'prepare_counsel_handoff',description:'Structured lawyer review questions and facts, not legal approval.',inputSchema:{type:'object',required:['assessments'],properties:{profile:profileSchema,assessments:assessmentSchema,notes:{type:'string'}}}}
 ];
-const call=(name,args)=>({get_legal_risk_catalog:getCatalog,build_review_plan:buildReviewPlan,triage_legal_risk_evidence:triageEvidence,scan_source_signals:scanSourceSignals,prepare_counsel_handoff:prepareCounselHandoff}[name]||(()=>{throw Error('Unknown tool')}))(args);
+const call=(name,args)=>({get_legal_risk_catalog:getCatalog,get_privacy_review:getPrivacyReview,build_review_plan:buildReviewPlan,triage_legal_risk_evidence:triageEvidence,scan_source_signals:scanSourceSignals,prepare_counsel_handoff:prepareCounselHandoff}[name]||(()=>{throw Error('Unknown tool')}))(args);
 export function processMessage(req){
  if(!req||req.jsonrpc!=='2.0'||typeof req.method!=='string')return {jsonrpc:'2.0',id:req?.id??null,error:{code:-32600,message:'Invalid request'}};
  if(!Object.hasOwn(req,'id'))return null;
